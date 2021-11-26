@@ -1,0 +1,16 @@
+.list-group-item {
+    background-color: transparent !important;
+    color: rgb(0, 2, 3);
+}
+
+.footer p {
+    color: rgb(0, 2, 3);
+}
+
+.navbar .active {
+    border-bottom: 3px solid #b29731;
+}
+
+.footer .nav-link {
+    color: rgb(0, 2, 3);
+}

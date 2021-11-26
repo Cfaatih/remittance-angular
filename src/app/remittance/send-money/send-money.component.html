@@ -1,0 +1,141 @@
+<div class="container-fluid justify-content-center">
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <a routerLink="home"> <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="btnradio1">Dashboard</label></a>
+
+        <a routerLink="sendMoney"> <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio2">Send Money</label></a>
+
+        <a routerLink="registerCustomer"> <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio3">Register Customer</label></a>
+
+        <a routerLink="allRemittances"> <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio3">Remittances</label></a>
+
+        <a routerLink="allUsers"> <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio3">Users</label></a>
+
+        <a routerLink="createUser"> <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio3">Create User</label></a>
+
+
+    </div>
+
+    <!-- register customer starts here -->
+    <div class="container-fluid bg-light ">
+        <div class="container-fluid bg-light ">
+            <h3 class=" text-success text-center py-3 ">Send Money</h3>
+        </div>
+
+        <div class="row mb-5 py-5 ml-4 ">
+            <div class="col-6 mt-5 pt-5 ">
+                <img src="assets/images/send-money.png " alt=" " style="width: 590px;height: 700px; ">
+            </div>
+
+            <div class="col-5 bg-white m-5 p-5 ">
+                <h3>Send Money</h3>
+                <form [formGroup]="sendMoney " (ngSubmit)="postData() ">
+                    <div class="mb-3 ">
+                        <label for="exampleInputEmail1 " class="form-label ">Enter Customer ID</label>
+                        <input type="email " class="form-control " formControlName="customer_id ">
+                        <span *ngIf="sendMoney.get( 'customer_id')?.touched && sendMoney.get( 'customer_id')?.hasError( 'required') ">Please Enter Customer ID</span>
+
+                    </div>
+
+                    <div class=" mb-3 ">
+                        <label for="exampleInputPassword1 " class="form-label ">Enter Sending Amount</label>
+                        <input type="number " class="form-control " formControlName="sending_amount ">
+                        <span *ngIf="sendMoney.get( 'sending_amount')?.touched && sendMoney.get( 'sending_amount')?.hasError( 'required') ">Sending Amount is required</span>
+                    </div>
+
+                    <div class=" mb-3 ">
+                        <label for="exampleInputPassword1 " class="form-label ">Enter Receiving Amount</label>
+                        <input type="number " class="form-control " formControlName="receiving_amount ">
+                        <span *ngIf="sendMoney.get( 'receiving_amount')?.touched && sendMoney.get( 'receiving_amount')?.hasError( 'required') ">Sending Amount is required</span>
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="exampleInputEmail1 " class="form-label ">Enter Currency ID</label>
+                        <input type="number " class="form-control " formControlName="currency_id ">
+                        <span *ngIf="sendMoney.get( 'currency_id')?.touched && sendMoney.get( 'currency_id')?.hasError( 'required') ">Please Enter Currency ID</span>
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="exampleInputEmail1 " class="form-label ">Enter Country ID</label>
+                        <input type="number " class="form-control " formControlName="country_id ">
+                        <span *ngIf="sendMoney.get( 'country_id')?.touched && sendMoney.get( 'country_id')?.hasError( 'required') ">Please Enter Country ID</span>
+                    </div>
+
+                    <div class="mb-3 ">
+                        <label for="exampleInputEmail1 " class="form-label ">Enter State ID</label>
+                        <input type="number " class="form-control " formControlName="state_id ">
+                        <span *ngIf="sendMoney.get( 'state_id')?.touched && sendMoney.get( 'state_id')?.hasError( 'required') ">Please Enter State ID</span>
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="exampleInputEmail1 " class="form-label ">Enter City ID</label>
+                        <input type="number " class="form-control " formControlName="city_id ">
+                        <span *ngIf="sendMoney.get( 'city_id')?.touched && sendMoney.get( 'city_id')?.hasError( 'required') ">Please Enter City ID</span>
+                    </div>
+
+                    <!-- <div class="mb-3 ">
+                    <label for="inputState " class="form-label ">Enter State ID</label>
+                    <select class="form-select " formControlName="state_id ">
+                        <span *ngIf="sendMoney.get( 'state_id')?.touched && sendMoney.get( 'state_id')?.hasError( 'required') ">Please Enter State ID</span>
+                      <option selected>Choose...</option>
+                      <option>...</option>
+                    </select>
+                </div>
+
+                <div class="mb-3 ">
+                    <label for="inputState " class="form-label ">Select State</label>
+                    <select class="form-select " formControlName="state_id ">
+                        <span *ngIf="sendMoney.get( 'state_id')?.touched && sendMoney.get( 'state_id')?.hasError( 'required') ">Please Select State</span>
+                      <option selected>Choose...</option>
+                      <option>...</option>
+                    </select>
+                </div>
+                <div class="mb-3 ">
+                    <label for="inputState " class="form-label ">Select City</label>
+                    <select class="form-select " formControlName="city_id ">
+                        <span *ngIf="sendMoney.get( 'city_id')?.touched && sendMoney.get( 'city_id')?.hasError( 'required') ">Please Select City</span>
+                      <option selected>Choose...</option>
+                      <option>...</option>
+                    </select>
+                </div> -->
+
+                    <div class=" mb-3 ">
+                        <label for="exampleInputPassword1 " class="form-label ">Enter Charge ID</label>
+                        <input type="number " class="form-control " formControlName="charge_id ">
+                        <span *ngIf="sendMoney.get( 'charge_id')?.touched && sendMoney.get( 'charge_id')?.hasError( 'required') ">Charge is required to enter</span>
+                    </div>
+
+                    <div class="mb-3 ">
+                        <label for="exampleInputEmail1 " class="form-label ">Enter Payment ID</label>
+                        <input type="number " class="form-control " formControlName="payment_id ">
+                        <span *ngIf="sendMoney.get( 'payment_id')?.touched && sendMoney.get( 'payment_id')?.hasError( 'required') ">Please Enter Payment ID</span>
+                    </div>
+
+                    <div class="mb-3 ">
+                        <label for="exampleInputEmail1 " class="form-label ">Enter User ID</label>
+                        <input type="number " class="form-control " formControlName="USERID ">
+                        <span *ngIf="sendMoney.get( 'USERID')?.touched && sendMoney.get( 'USERID')?.hasError( 'required') ">Please Enter User ID</span>
+                    </div>
+
+
+                    <div class="d-grid gap-2 ">
+                        <button type="submit " class="btn btn-primary " [disabled]="!sendMoney.valid ">Send Money</button>
+                    </div>
+                    <div class="mb-3 my-3 ">
+                        <span class="text-danger ">{{lognInError}}</span>
+                    </div>
+                    <div class="mb-3 my-3 ">
+                        <span class="text-success ">{{lognInRes}}</span>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!-- register customer starts here -->

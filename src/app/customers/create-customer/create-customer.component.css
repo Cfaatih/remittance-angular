@@ -1,0 +1,12 @@
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.reg {
+    background-color: hsl(138, 94%, 31%);
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 230px;
+    opacity: .7;
+}

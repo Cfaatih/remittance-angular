@@ -1,25 +1,34 @@
 <div class="container-fluid justify-content-center">
-    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-        <a routerLink="home"> <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-            <label class="btn btn-outline-primary" for="btnradio1">Dashboard</label></a>
+    <div class="row">
+        <div class="col-3">
+            <h3 class="text-success">Welcome</h3>
+        </div>
+        <div class="col-8 align-item-right">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <a routerLink="home"> <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio1">Dashboard</label></a>
 
-        <a routerLink="sendMoney"> <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio2">Send Money</label></a>
+                <a routerLink="/sendMoney"> <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio2">Send Money</label></a>
 
-        <a routerLink="registerCustomer"> <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio3">Register Customer</label></a>
+                <a routerLink="/registerCustomer"> <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio3">Register Customer</label></a>
 
-        <a routerLink="allRemittances"> <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio3">Remittances</label></a>
+                <a routerLink="/allRemittances"> <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio3">Remittances</label></a>
 
-        <a routerLink="allUsers"> <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio3">Users</label></a>
+                <a routerLink="/allUsers"> <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio3">Users</label></a>
 
-        <a routerLink="createUser"> <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio3">Create User</label></a>
+                <a routerLink="/createUser"> <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio3">Create User</label></a>
 
-
+                <a routerLink="/"> <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio3">Logout</label></a>
+            </div>
+        </div>
     </div>
+
 
 </div>
 <!-- Slider starts here -->

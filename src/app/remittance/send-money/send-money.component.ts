@@ -10,6 +10,10 @@ export class SendMoneyComponent implements OnInit {
 sendMoney:FormGroup;
 lognInError:any;
 lognInRes:any;
+countries:any=[];
+states:any=[];
+cities:any=[];
+currencies:any=[];
   constructor(private formBuilder:FormBuilder, private apiData:ApisService) {
     this.sendMoney=formBuilder.group({
       customer_id:['',Validators.required],
@@ -23,9 +27,45 @@ lognInRes:any;
       payment_id:['', Validators.required],
       USERID:['', Validators.required]
     })
+  
    }
 
   ngOnInit(): void {
+    //get all countries
+    this.apiData.getAllCountries_API()
+    .then(result => {
+      console.log(result.data);
+     this.countries = result.data;
+    }).catch(err => {
+      console.log(err);  
+    });
+
+    //get all states
+    this.apiData.getAllStates_API()
+    .then(result => {
+      console.log(result.data);
+     this.states = result.data;
+    }).catch(err => {
+      console.log(err);      
+    });
+
+    //get all Cities
+    this.apiData.getAllCities_API()
+    .then(result => {
+      console.log(result.data);
+     this.cities = result.data;
+    }).catch(err => {
+      console.log(err);      
+    })
+
+    //get all currencies
+    this.apiData.getAllCurrency()
+    .then(result => {
+      console.log(result.data);
+     this.currencies = result.data;
+    }).catch(err => {
+      console.log(err);      
+    })
   }
 
   postData(){

@@ -23,15 +23,15 @@ const routes: Routes = [
   {path:'', component:LoginComponent},
    {path:'sidebar', component:SidebarComponent},
   
-  {path:'home/registerCustomer', component:RegisterCustomerComponent},
-  {path:'home/allCustomers', component:AllCustomersComponent},
+  {path:'registerCustomer', component:RegisterCustomerComponent},
+  {path:'allCustomers', component:AllCustomersComponent},
   {path:'showCustomer', component:ShowCustomerComponent},
-  {path:'home/sendMoney', component:SendMoneyComponent},
-  {path:'home/allRemittances', component:ShowAllRemittancesComponent},
-  {path:'home/showRemittance', component:ShowRemittanceComponent},
-  {path:'home/allUsers', component:AllUsersComponent},
-  {path:'home/getUser', component:GetUserComponent},
-  {path:'home/createUser', component:CreateUserComponent},
+  {path:'sendMoney', component:SendMoneyComponent},
+  {path:'allRemittances', component:ShowAllRemittancesComponent},
+  {path:'showRemittance', component:ShowRemittanceComponent},
+  {path:'allUsers', component:AllUsersComponent},
+  {path:'getUser', component:GetUserComponent},
+  {path:'createUser', component:CreateUserComponent},
  
 
 ];

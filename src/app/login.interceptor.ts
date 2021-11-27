@@ -8,11 +8,18 @@ import {
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class YInterceptor implements HttpInterceptor {
+export class LoginInterceptor implements HttpInterceptor {
 
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request);
+    console.log(request);
+    
+    return next.handle(request.clone({
+      setHeaders :{
+        "x-access-token":localStorage.getItem('jwtToken') || '',
+        "Accept-Language":"en"
+      }
+    }));
   }
 }

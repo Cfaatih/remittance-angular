@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,7 @@ import { CustomerModule } from './customer/customer.module';
 import { RemittanceModule } from './remittance/remittance.module';
 import { UsersModule } from './users/users.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { LoginInterceptor } from './login.interceptor';
 
 
 @NgModule({
@@ -37,7 +38,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
     UsersModule,
     DashboardModule
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:LoginInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

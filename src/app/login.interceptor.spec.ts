@@ -1,16 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { YInterceptor } from './y.interceptor';
+import { LoginInterceptor } from './login.interceptor';
 
-describe('YInterceptor', () => {
+describe('LoginInterceptor', () => {
   beforeEach(() => TestBed.configureTestingModule({
     providers: [
-      YInterceptor
+      LoginInterceptor
       ]
   }));
 
   it('should be created', () => {
-    const interceptor: YInterceptor = TestBed.inject(YInterceptor);
+    const interceptor: LoginInterceptor = TestBed.inject(LoginInterceptor);
     expect(interceptor).toBeTruthy();
   });
 });

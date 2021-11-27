@@ -96,6 +96,67 @@ login_API(userLogin: any): Promise<any> {
   });
 }
 
+//get all all countries
+getAllCountries_API(): Promise<any> {
+  return new Promise<any>((resolve, reject) => {
+    this.api.get('http://localhost:5000/v1/operations/getCountries')
+      .toPromise()
+      .then(result => {
+        if (result) {
+          resolve(result);
+        }
+      }).catch(err => {
+        reject(err)
+      });
+  });
+}
+
+
+//get all states
+getAllStates_API(): Promise<any> {
+  return new Promise<any>((resolve, reject) => {
+    this.api.get('http://localhost:5000/v1/operations/getStates')
+      .toPromise()
+      .then(result => {
+        if (result) {
+          resolve(result);
+        }
+      }).catch(err => {
+        reject(err)
+      });
+  });
+}
+
+//get all cities
+getAllCities_API(): Promise<any> {
+  return new Promise<any>((resolve, reject) => {
+    this.api.get('http://localhost:5000/v1/operations/getCities')
+      .toPromise()
+      .then(result => {
+        if (result) {
+          resolve(result);
+        }
+      }).catch(err => {
+        reject(err)
+      });
+  });
+}
+
+//get all currencies
+getAllCurrency(): Promise<any> {
+  return new Promise<any>((resolve, reject) => {
+    this.api.get('http://localhost:5000/v1/operations/getCurrencies')
+      .toPromise()
+      .then(result => {
+        if (result) {
+          resolve(result);
+        }
+      }).catch(err => {
+        reject(err)
+      });
+  });
+}
+
 
 }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ApisService } from 'src/app/apis.service';
 @Component({
   selector: 'app-register-customer',
   templateUrl: './register-customer.component.html',
@@ -9,16 +10,16 @@ export class RegisterCustomerComponent implements OnInit {
   signUpForm:FormGroup;
   lognInError:any;
   lognInRes:any;
-  constructor(private formBuilder:FormBuilder) { 
+  constructor(private formBuilder:FormBuilder, private apiData:ApisService) { 
     this.signUpForm=formBuilder.group({
-      email:['', [
+      customer_email:['', [
         Validators.required,
         Validators.email                 
       ]
     ],
-    customerName:['', Validators.required],
-    customerAddress:['', Validators.required],
-    MobileNumber:['', Validators.required],
+    customer_name:['', Validators.required],
+    address:['', Validators.required],
+    mobile_no:['', Validators.required],
     gender:['', Validators.required]
     })
   }
@@ -28,6 +29,18 @@ export class RegisterCustomerComponent implements OnInit {
 
   postData(){
     console.log(this.signUpForm.value);
+    this.apiData.registerCustomer_API(this.signUpForm.value)
+    .then(result => {
+      console.log(result.message); 
+      this.lognInRes=result.message;
+      
+    }).catch(err=>{
+      
+      console.log(err.error.error);
+      this.lognInError=err.error.error;
+      
+    });
+    
     
   }
 

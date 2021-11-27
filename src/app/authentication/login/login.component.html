@@ -1,7 +1,8 @@
-<div class="container-fluid  bg-light ">
-    <div class="row justify-content-center mb-5 py-5">
-        <div class="col-4 bg-white m-5 p-5">
-            <h3>Login</h3>
+<div class="container-fluid  bgPage">
+    <div class="row justify-content-center mb-5 py-4">
+        <div class="col-4 bg-white m-5 p-3">
+            <img class="img-fluid rounded mx-auto d-block" style="height: 100px; width:100px;" src="assets/images/remit-logo1.png" alt="Login Logo">
+            <h3 class="text-black text-center py-2">Login</h3>
             <form [formGroup]="signInForm" (ngSubmit)="lognIn()">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -15,7 +16,7 @@
                     <span *ngIf="signInForm.get('password')?.touched && signInForm.get('password')?.hasError('required')">Password is required to enter</span>
                 </div>
                 <div class="d-grid gap-2">
-                    <button type="submit " class="btn btn-primary btn- " [disabled]="!signInForm.valid ">Login</button>
+                    <button type="submit " class="btn btn-primary h3" [disabled]="!signInForm.valid ">Login</button>
                 </div>
 
                 <div class="mb-3 my-3 ">
@@ -24,18 +25,6 @@
             </form>
 
         </div>
-    </div>
-    <div class="container-fluid mt-2 mb-2 pb-5 reg">
-        <div class="row">
-            <div class="col-8 pt-3 pb-3 justify-content-center my-5 mx-5">
-                <h1 class="text-center text-white  pb-1">Create your account in few minutes</h1>
-                <p class="text-center text-white  pb-3">Sign up for free, and get exiciting offers using our services.</p>
-            </div>
-            <div class="col-2 pt-3 my-5 mx-3">
-                <button class="btn-white btn-lg ">Register Now</button>
-            </div>
-        </div>
-
     </div>
 
 </div>

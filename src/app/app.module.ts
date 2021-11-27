@@ -15,8 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CustomerModule } from './customer/customer.module';
 import { RemittanceModule } from './remittance/remittance.module';
 import { UsersModule } from './users/users.module';
-import { DashboardModule } from './dashboard/dashboard.module';
 import { LoginInterceptor } from './login.interceptor';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -25,6 +25,7 @@ import { LoginInterceptor } from './login.interceptor';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
+    PageNotFoundComponent,
   
   ],
   imports: [
@@ -35,8 +36,7 @@ import { LoginInterceptor } from './login.interceptor';
     HttpClientModule,
     CustomerModule,
     RemittanceModule, 
-    UsersModule,
-    DashboardModule
+    UsersModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:LoginInterceptor,multi:true}

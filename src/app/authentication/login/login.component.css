@@ -2,10 +2,6 @@
         border: 1px solid red;
     }
     
-    .reg {
-        background-color: hsl(138, 94%, 31%);
-        background-attachment: fixed;
-        background-size: cover;
-        height: 230px;
-        opacity: .7;
+    .bgPage {
+        background-color: #ebedf0;
     }

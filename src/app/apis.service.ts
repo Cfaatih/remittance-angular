@@ -157,6 +157,40 @@ getAllCurrency(): Promise<any> {
   });
 }
 
+//get all customers
+getAllCustomeries(): Promise<any> {
+  return new Promise<any>((resolve, reject) => {
+    this.api.get('http://localhost:5000/v1/customers')
+      .toPromise()
+      .then(result => {
+        if (result) {
+          resolve(result);
+        }
+      }).catch(err => {
+        reject(err)
+      });
+  });
+}
+
+//create customer
+registerCustomer_API(register: any): Promise<any> {
+  const httpHeaders = new HttpHeaders();
+  httpHeaders.append('Content-Type','application/json' );
+
+  return new Promise<any>((resolve, reject) => {
+    this.api.post('http://localhost:5000/v1/customers/create', register, {headers:httpHeaders})
+      .toPromise()
+      .then(result => {
+        if (result) {
+          resolve(result);
+        }
+      }).catch(err => {
+        reject(err)
+      });
+  });
+}
+
+
 
 }
 
